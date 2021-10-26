@@ -7,7 +7,15 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'roboto-condensed': ['"Roboto Condensed"', 'sans-serif'],
+            },
+
+            colors: {
+                'hci-lila': '#8034AD',
+            },
+        },
     },
     variants: {
         extend: {},
