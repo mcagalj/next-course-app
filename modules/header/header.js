@@ -12,6 +12,7 @@ const Header = () => {
                 className="z-0"
                 layout="fill"
                 objectFit="cover"
+                placeholder="blur"
                 alt="Hero image"
             />
             <main className="max-w-4xl mx-auto flex-grow flex flex-col">
@@ -25,12 +26,24 @@ const Header = () => {
                     />
                     <nav className="z-10">
                         <ul className="inline-flex list-none font-medium text-purple-900">
-                            <li className="px-4 text-white bg-purple-900">Home</li>
-                            <li className="px-4">About Us</li>
-                            <li className="px-4">Showcase</li>
-                            <li className="px-4">Blog</li>
-                            <li className="px-4">Contact</li>
-                            <li className="px-4">Sign In</li>
+                            <li className="px-5 py-2 text-white bg-purple-900 hover:bg-purple-700 hover:cursor-pointer">
+                                Home
+                            </li>
+                            <li className="px-5 py-2 hover:bg-purple-700 hover:text-white hover:cursor-pointer">
+                                About Us
+                            </li>
+                            <li className="px-5 py-2 hover:bg-purple-700 hover:text-white hover:cursor-pointer">
+                                Showcase
+                            </li>
+                            <li className="px-5 py-2 hover:bg-purple-700 hover:text-white hover:cursor-pointer">
+                                Blog
+                            </li>
+                            <li className="px-5 py-2 hover:bg-purple-700 hover:text-white hover:cursor-pointer">
+                                Contact
+                            </li>
+                            <li className="px-5 py-2 hover:bg-purple-700 hover:text-white hover:cursor-pointer">
+                                Sign In
+                            </li>
                         </ul>
                     </nav>
                 </div>
