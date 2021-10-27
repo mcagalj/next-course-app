@@ -25,22 +25,22 @@ const Header = () => {
                     />
                     <nav className="z-10">
                         <ul className="inline-flex list-none font-medium text-hci-lila">
-                            <li className="px-5 py-2 whitespace-nowrap text-white bg-hci-lila hover:bg-hci-lila hover:bg-opacity-50 hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap text-white bg-hci-lila hover:bg-hci-lila hover:bg-opacity-50 cursor-pointer">
                                 Home
                             </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
                                 About Us
                             </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
                                 Showcase
                             </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
                                 Blog
                             </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
                                 Contact
                             </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white hover:cursor-pointer">
+                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
                                 Sign In
                             </li>
                         </ul>

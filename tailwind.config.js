@@ -1,10 +1,10 @@
 module.exports = {
-    mode: 'jit',
-    purge: [
-        './pages/**/*.{js,ts,jsx,tsx}',
-        './components/**/*.{js,ts,jsx,tsx}',
-        './modules/**/*.{js,ts,jsx,tsx}',
-    ],
+    // mode: 'jit',
+    // purge: [
+    //     './pages/**/*.{js,ts,jsx,tsx}',
+    //     './components/**/*.{js,ts,jsx,tsx}',
+    //     './modules/**/*.{js,ts,jsx,tsx}',
+    // ],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -13,7 +13,11 @@ module.exports = {
             },
 
             colors: {
-                'hci-lila': '#8034AD',
+                'hci-lila': {
+                    light: '#E3CEF0',
+                    DEFAULT: '#8034AD',
+                    dark: '#612D81',
+                },
             },
         },
     },
