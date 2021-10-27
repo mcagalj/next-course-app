@@ -15,7 +15,7 @@ const Hello = () => {
             {/* Call to action (CTA) section */}
             <section className="pt-12">
                 <main className="max-w-4xl mx-auto flex align-bottom">
-                    <div className="flex">
+                    <div className="flex relative">
                         <Image
                             src={CTAImg}
                             layout="fixed"
