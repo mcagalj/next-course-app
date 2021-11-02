@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import LogoImg from '../../assets/logo.png';
 import HeroImg from '../../assets/hero.png';
+import NavBar from '../../components/navbar';
 
 const Header = () => {
     return (
@@ -23,28 +24,7 @@ const Header = () => {
                         height={50}
                         alt="Design logo"
                     />
-                    <nav className="z-10">
-                        <ul className="inline-flex list-none font-medium text-hci-lila">
-                            <li className="px-5 py-2 whitespace-nowrap text-white bg-hci-lila hover:bg-hci-lila hover:bg-opacity-50 cursor-pointer">
-                                Home
-                            </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                                About Us
-                            </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                                Showcase
-                            </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                                Blog
-                            </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                                Contact
-                            </li>
-                            <li className="px-5 py-2 whitespace-nowrap hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                                Sign In
-                            </li>
-                        </ul>
-                    </nav>
+                    <NavBar />
                 </div>
                 <div className="z-10">
                     <h1 className="text-5xl font-roboto-condensed font-bold mb-2 text-hci-lila">
