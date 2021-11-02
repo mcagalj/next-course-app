@@ -9,7 +9,7 @@ const navigationItems = [
 
 const NavBar = () => {
     return (
-        <nav className="inline-flex list-none font-medium text-hci-lila">
+        <nav className="hidden sm:inline-flex list-none font-medium text-hci-lila">
             {navigationItems.map((item) => (
                 <li
                     key={item}

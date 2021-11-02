@@ -18,6 +18,9 @@ module.exports = {
                     DEFAULT: '#8034AD',
                     dark: '#612D81',
                 },
+                'hci-header': {
+                    DEFAULT: '#CBC3E7',
+                },
             },
         },
     },
