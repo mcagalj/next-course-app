@@ -37,7 +37,8 @@ const Hello = () => {
 
                     <div className="mt-14 mb-4 px-10 sm:hidden">
                         <h2 className="capitalize text-3xl font-roboto-condensed font-bold text-gray-700">
-                            Grow your business{' '}
+                            Grow your business
+                            <br />
                             <span className="capitalize text-hci-lila">with us</span>
                         </h2>
                     </div>
