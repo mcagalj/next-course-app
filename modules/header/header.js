@@ -48,7 +48,7 @@ const Header = () => {
                         <div className="w-8" />
                         <Image
                             onClick={() => setIsClicked(!isClicked)}
-                            className={`cursor-pointer z-50 transition-all ease-linear duration-500 ${
+                            className={`transform scale-75 cursor-pointer z-50 transition-all ease-linear duration-500 ${
                                 isClicked ? 'transform rotate-90' : ''
                             }`}
                             src={'/hamburger.svg'}
