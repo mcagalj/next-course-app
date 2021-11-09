@@ -1,3 +1,10 @@
 module.exports = {
-  reactStrictMode: true,
-}
+    reactStrictMode: true,
+    baseUrl: '.',
+    paths: {
+        '@/assets/*': ['assets/*'],
+        '@/const/*': ['const/*'],
+        '@/components/*': ['components/*'],
+        '@/modules/*': ['modules/*'],
+    },
+};
