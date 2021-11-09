@@ -17,15 +17,14 @@ const Header = () => {
 
     return (
         <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80">
-            <div className="hidden sm:block z--1">
-                <Image
-                    src={HeroImg}
-                    layout="fill"
-                    objectFit="cover"
-                    placeholder="blur"
-                    alt="Hero image"
-                />
-            </div>
+            <Image
+                className="hidden sm:block z--1"
+                src={HeroImg}
+                layout="fill"
+                objectFit="cover"
+                placeholder="blur"
+                alt="Hero image"
+            />
 
             <main className="max-w-4xl mx-auto flex-grow flex flex-col">
                 <div className="z-10 flex justify-between items-center sm:mb-16">
