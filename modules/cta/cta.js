@@ -45,12 +45,11 @@ export default function Cta() {
                     />
                 </div>
 
-                <div className="relative hidden sm:flex">
+                <div style={{ width }} className="relative hidden sm:flex">
                     <Image
                         src={CTAImg}
-                        layout="fixed"
-                        width={width}
-                        height={height}
+                        layout="fill"
+                        objectFit="cover"
                         alt="Grow business"
                     />
                 </div>
@@ -81,7 +80,7 @@ export default function Cta() {
                     </div>
                 </div>
 
-                <div className="ml-8 flex-col justify-between hidden sm:flex">
+                <div className="sm:ml-8 px-5 sm:pl-0 flex-col justify-between hidden w-1/2 sm:flex">
                     <div>
                         <div>
                             <h2 className="capitalize text-4xl font-roboto-condensed font-bold text-gray-700">
@@ -98,13 +97,13 @@ export default function Cta() {
                             exercitation ullamco laboris nisi ut aliquip ex ea
                             commodo consequat.
                         </p>
-                        <p className="mt-2 leading-6">
+                        <p className="mt-2 leading-6 hidden md:block">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore
                             magna aliqua.
                         </p>
                     </div>
-                    <button className="w-2/3 py-3 bg-red-700 hover:bg-red-800 shadow-md whitespace-nowrap text-xl text-white font-medium">
+                    <button className="w-2/3 min-w-min px-5 py-3 mt-8 bg-red-700 hover:bg-red-800 shadow-md whitespace-nowrap text-xl text-white font-medium">
                         Book a meeting
                     </button>
                 </div>
