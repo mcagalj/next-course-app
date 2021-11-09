@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import LogoImg from '@/assets/logo.png';
@@ -14,6 +14,15 @@ const magnifierHeight = magnifierWidth / (26 / 25);
 
 const Header = () => {
     const [isClicked, setIsClicked] = useState(false);
+
+    useEffect(() => {
+        const body = document.getElementsByTagName('body')[0];
+        if (isClicked) {
+            body.classList.add('overflow-hidden');
+        } else {
+            body.classList.remove('overflow-hidden');
+        }
+    }, [isClicked]);
 
     return (
         <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80">
