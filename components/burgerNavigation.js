@@ -1,4 +1,3 @@
-import { navigationItems } from '../const/navbarList';
 import NavBar from './navbar';
 
 const BurgerNavigation = ({ isOpen }) => {

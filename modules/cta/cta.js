@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import CTAImg from '../../assets/grow_business.jpg';
+import CTAImg from '@/assets/grow_business.jpg';
 
 const width = 410;
 const height = width / (508 / 440);

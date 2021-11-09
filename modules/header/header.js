@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import LogoImg from '../../assets/logo.png';
-import HeroImg from '../../assets/hero.png';
-import NavBar from '../../components/navbar';
-import BurgerNavigation from '../../components/burgerNavigation';
+import LogoImg from '@/assets/logo.png';
+import HeroImg from '@/assets/hero.png';
+import NavBar from '@/components/navbar';
+import BurgerNavigation from '@/components/burgerNavigation';
 
 const hamburgerWidth = 45;
 const hamburgerHeight = hamburgerWidth / (35 / 50);

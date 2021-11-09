@@ -1,5 +1,5 @@
-import Testimonial from '../../components/testimonial';
-import { testimonials } from '../../const/testimonialsList';
+import Testimonial from '@/components/testimonial';
+import { testimonials } from '@/const/testimonialsList';
 
 const Testimonials = () => {
     return (
