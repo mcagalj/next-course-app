@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import LogoImg from '@/assets/logo.png';
 import HeroImg from '@/assets/hero.png';
@@ -38,16 +37,13 @@ const Header = () => {
 
             <main className="max-w-4xl mx-auto flex-grow flex flex-col">
                 <div className="z-10 flex justify-between items-center sm:mb-16">
-                    <Link href="/home" passHref>
-                        <Image
-                            className="cursor-pointer"
-                            src={LogoImg}
-                            layout="fixed"
-                            width={50}
-                            height={50}
-                            alt="Design logo"
-                        />
-                    </Link>
+                    <Image
+                        src={LogoImg}
+                        layout="fixed"
+                        width={50}
+                        height={50}
+                        alt="Design logo"
+                    />
                     <div className="flex items-center sm:hidden">
                         <BurgerNavigation isOpen={isClicked} />
                         <Image

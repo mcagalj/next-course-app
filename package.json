@@ -16,6 +16,7 @@
         "slugify": "^1.6.2"
     },
     "devDependencies": {
+        "airtable": "^0.11.1",
         "autoprefixer": "^10.3.7",
         "eslint": "7.32.0",
         "eslint-config-next": "11.1.2",
