@@ -8,7 +8,10 @@ const Testimonial = () => {
     return (
         <>
             <Header />
-            <h1 className="text-2xl">HI! You are on {router.query.testimonialId}</h1>
+            <h1 className="text-2xl text-center p-20">
+                HI! You are on{' '}
+                <span className="text-red-700">{router.query.testimonialId}</span>
+            </h1>
             <Footer />
         </>
     );
