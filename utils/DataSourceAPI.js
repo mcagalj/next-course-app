@@ -1,6 +1,4 @@
-import { testimonials } from '@/const/testimonialsList';
 import Airtable from 'airtable';
-import { resolveHref } from 'next/dist/shared/lib/router/router';
 
 Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
