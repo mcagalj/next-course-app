@@ -28,7 +28,7 @@ const Testimonial = ({ caption, imageSrc }) => (
                 />
             </div>
         </div>
-        <Link href={`/testimonials/${slugify(caption, { lower: true })}`} passHref>
+        <Link href={`/showcase/${slugify(caption, { lower: true })}`} passHref>
             <div className="h-1/5 bg-gray-300 items-center justify-center cursor-pointer relative hidden sm:flex">
                 <p className="capitalize font-roboto-condensed text-xl text-hci-lila">
                     {caption}
