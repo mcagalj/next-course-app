@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import slugify from 'slugify';
 import { navigationItems } from '../const/navbarList';
 
 const NavBar = ({ classes }) => {
@@ -8,12 +10,15 @@ const NavBar = ({ classes }) => {
             } sm:inline-flex list-none font-medium text-hci-lila ${classes}`}
         >
             {navigationItems.map((item) => (
-                <li
+                <Link
                     key={item}
-                    className="px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer"
+                    href={`/${slugify(item, { lower: true })}`}
+                    passHref
                 >
-                    {item}
-                </li>
+                    <li className="px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
+                        {item}
+                    </li>
+                </Link>
             ))}
         </nav>
     );
