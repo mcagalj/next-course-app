@@ -2,7 +2,6 @@ import slugify from 'slugify';
 import Image from 'next/image';
 import Header from '@/modules/header/header.js';
 import Footer from '@/modules/footer';
-
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
 const Testimonial = ({ testimonial }) => {

@@ -1,7 +1,6 @@
 import Testimonial from '@/components/testimonial';
-import { testimonials } from '@/const/testimonialsList';
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials }) => {
     return (
         <section className="mt-12 sm:py-12 sm:bg-gray-50">
             <main className="max-w-4xl flex flex-col mx-auto">
@@ -14,11 +13,12 @@ const Testimonials = () => {
                     </h4>
                 </div>
                 <div className="mt-12 sm:grid sm:grid-cols-2 sm:gap-4">
-                    {testimonials.map((el) => (
+                    {testimonials.map((item) => (
                         <Testimonial
-                            caption={el.caption}
-                            imageSrc={el.imageSrc}
-                            key={el.caption}
+                            id={item?.id}
+                            caption={item?.fields?.caption}
+                            imageSrc={item?.fields?.imageSrc}
+                            key={item.id}
                         />
                     ))}
                 </div>

@@ -1,15 +1,27 @@
 import Header from '@/modules/header/header.js';
-import Testimonials from '@/modules/testimonials/testimonials';
+import Testimonials from '@/modules/testimonials/testimonials.js';
 import Footer from '@/modules/footer';
 
-const TestimonialsIndexPage = () => {
+import DataSourceApi from '@/lib/DataSourceAPI.js';
+
+const ShowcaseIndexPage = ({ testimonials }) => {
     return (
         <>
             <Header />
-            <Testimonials />
+            <Testimonials testimonials={testimonials} />
             <Footer />
         </>
     );
 };
 
-export default TestimonialsIndexPage;
+export default ShowcaseIndexPage;
+
+export async function getStaticProps() {
+    const testimonials = await DataSourceApi.getTestimonials();
+
+    return {
+        props: {
+            testimonials,
+        },
+    };
+}
