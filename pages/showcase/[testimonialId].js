@@ -4,8 +4,7 @@ import Image from 'next/image';
 import Header from '@/modules/header/header.js';
 import Footer from '@/modules/footer';
 
-// import testimonials from '@/data/testimonials.json';
-import DataSourceApi from '@/utils/DataSourceAPI.js';
+import DataSourceApi from '@/lib/DataSourceAPI.js';
 
 const Testimonial = ({ testimonial }) => {
     const { caption, imageSrc, content } = testimonial;
@@ -56,7 +55,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    console.log({ params });
     // This is suboptimal (calling the same API for the same data twice);
     // we could potentially cache data in production.
     const testimonials = await DataSourceApi.getTestimonials();
