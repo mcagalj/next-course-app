@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import slugify from 'slugify';
 import Image from 'next/image';
 import Header from '@/modules/header/header.js';
@@ -37,36 +36,40 @@ const Testimonial = ({ testimonial }) => {
 
 export default Testimonial;
 
+export async function getStaticProps({ params }) {
+    // This is suboptimal (calling the same API for the same data twice;
+    // we call the same API in getStaticPaths()); we could potentially
+    // cache data in production.
+    const testimonials = await DataSourceApi.getTestimonials();
+
+    const testimonial = testimonials.find((testimonial) => {
+        const { caption } = testimonial?.fields;
+        return slugify(caption, { lower: true }) === params.testimonialId;
+    });
+
+    return {
+        props: {
+            testimonial: testimonial?.fields,
+        },
+    };
+}
+
 export async function getStaticPaths() {
     const testimonials = await DataSourceApi.getTestimonials();
 
-    const paths = testimonials.map((testimonial) => ({
-        params: {
-            testimonialId: slugify(testimonial.caption, {
-                lower: true,
-            }),
-        },
-    }));
+    const paths = testimonials.map((testimonial) => {
+        const { caption } = testimonial?.fields;
+        return {
+            params: {
+                testimonialId: slugify(caption, {
+                    lower: true,
+                }),
+            },
+        };
+    });
 
     return {
         paths,
         fallback: false,
-    };
-}
-
-export async function getStaticProps({ params }) {
-    // This is suboptimal (calling the same API for the same data twice);
-    // we could potentially cache data in production.
-    const testimonials = await DataSourceApi.getTestimonials();
-
-    const testimonial = testimonials.find(
-        (testimonial) =>
-            slugify(testimonial.caption, { lower: true }) === params.testimonialId
-    );
-
-    return {
-        props: {
-            testimonial,
-        },
     };
 }
