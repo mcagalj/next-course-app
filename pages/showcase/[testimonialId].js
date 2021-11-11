@@ -11,12 +11,12 @@ const Testimonial = ({ testimonial }) => {
         <>
             <Header />
             <section className="sm:py-12 sm:bg-gray-50">
-                <main className="max-w-4xl flex flex-col mx-auto">
-                    <h2 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700">
+                <main className="max-w-4xl flex flex-col mx-auto my-8">
+                    <h2 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 px-10 sm:px-0">
                         {caption}
                     </h2>
-                    <div className="flex justify-between mt-10">
-                        <div className="relative w-1/2 h-96">
+                    <div className="sm:flex sm:justify-between mt-10">
+                        <div className="relative sm:w-1/2 h-96">
                             <Image
                                 src={imageSrc}
                                 layout="fill"
@@ -24,7 +24,9 @@ const Testimonial = ({ testimonial }) => {
                                 alt="Grow business"
                             />
                         </div>
-                        <p className="ml-8 leading-6 w-1/2">{content}</p>
+                        <p className="ml-8 mt-8 sm:mt-0 leading-6 sm:w-1/2 px-10 sm:px-0">
+                            {content}
+                        </p>
                     </div>
                 </main>
             </section>
