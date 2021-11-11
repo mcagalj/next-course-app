@@ -2,15 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import slugify from 'slugify';
 
-const Testimonial = ({ caption, imageSrc }) => (
+const Testimonial = ({ caption, imageUrl }) => (
     <div className="h-96 sm:border hover:cursor-pointer first:mt-0">
         <div className="h-4/5 bg-gray-100 relative">
             <Image
-                src={imageSrc}
+                src={imageUrl}
                 layout="fill"
                 objectFit="cover"
                 objectPosition="0px 0px"
-                alt="Design system"
+                alt={caption}
             />
         </div>
         <Link

@@ -15,10 +15,10 @@ const Testimonials = ({ testimonials }) => {
                 <div className="mt-12 sm:grid sm:grid-cols-2 sm:gap-4">
                     {testimonials.map((item) => (
                         <Testimonial
-                            id={item?.id}
+                            key={item.id}
                             caption={item?.fields?.caption}
                             imageSrc={item?.fields?.imageSrc}
-                            key={item.id}
+                            imageUrl={item?.fields?.image[0]?.url}
                         />
                     ))}
                 </div>
