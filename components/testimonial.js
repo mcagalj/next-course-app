@@ -26,13 +26,14 @@ const Testimonial = ({ caption, imageUrl }) => (
                 </p>
 
                 <div className="absolute right-10 h-full flex items-center">
-                    <Image
-                        src={'/right.svg'}
+                    <img src={'/right.svg'} className="w-3 h-3" alt="Right icon" />
+                    {/* <Image
+                        src={right}
                         layout="fixed"
                         width={15}
                         height={15}
                         alt="Right icon"
-                    />
+                    /> */}
                 </div>
             </div>
         </Link>
@@ -49,13 +50,14 @@ const Testimonial = ({ caption, imageUrl }) => (
                     {caption}
                 </p>
                 <div className="absolute right-4 h-full flex items-center">
-                    <Image
-                        src={'/right.svg'}
+                    <img src={'/right.svg'} className="w-3 h-3" alt="Right icon" />
+                    {/* <Image
+                        src={right}
                         layout="fixed"
                         width={15}
                         height={15}
                         alt="Right icon"
-                    />
+                    /> */}
                 </div>
             </div>
         </Link>

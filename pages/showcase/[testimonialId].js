@@ -5,8 +5,8 @@ import Footer from '@/modules/footer';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
 const Testimonial = ({ testimonial }) => {
-    const { caption, content, image } = testimonial;
-    const imageUrl = image[0]?.url;
+    const { caption, content, imageSrcCloudinary: imageUrl } = testimonial;
+    // const imageUrl = image[0]?.url;
 
     return (
         <>
@@ -43,7 +43,6 @@ export async function getStaticProps({ params }) {
     // we call the same API in getStaticPaths()); we could potentially
     // cache data in production.
     const testimonials = await DataSourceApi.getTestimonials();
-
     const testimonial = testimonials.find((testimonial) => {
         const { caption } = testimonial?.fields;
         return slugify(caption, { lower: true }) === params.testimonialId;

@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import LogoImg from '@/assets/logo.png';
-import HeroImg from '@/assets/hero.png';
+// import LogoImg from '@/assets/logo.png';
+// import HeroImg from '@/assets/hero.png';
+
+// I hear you, of course, this is not good approach ...
+const LogoImg = 'v1636883352/next_course/logo_t6nqep.png';
+const HeroImg = 'v1636886451/next_course/hero_grcfst.png';
+
 import NavBar from '@/components/navbar';
 import BurgerNavigation from '@/components/burgerNavigation';
 
@@ -31,7 +36,7 @@ const Header = () => {
                 src={HeroImg}
                 layout="fill"
                 objectFit="cover"
-                placeholder="blur"
+                // placeholder="blur"
                 alt="Hero image"
             />
 
@@ -46,16 +51,29 @@ const Header = () => {
                     />
                     <div className="flex items-center sm:hidden">
                         <BurgerNavigation isOpen={isClicked} />
-                        <Image
+                        <img
+                            className="cursor-pointer z-0 h-5"
+                            src={'/magnifier.svg'}
+                            alt="Menu"
+                        />
+                        {/* <Image
                             className="cursor-pointer z-0"
                             src={'/magnifier.svg'}
                             layout="fixed"
                             width={magnifierWidth}
                             height={magnifierHeight}
                             alt="Menu"
-                        />
+                        /> */}
                         <div className="w-8" />
-                        <Image
+                        <img
+                            onClick={() => setIsClicked(!isClicked)}
+                            className={`h-7 transform scale-75 cursor-pointer z-50 transition-all ease-linear duration-500 ${
+                                isClicked ? 'transform rotate-90' : ''
+                            }`}
+                            src={'/hamburger.svg'}
+                            alt="Menu"
+                        />
+                        {/* <Image
                             onClick={() => setIsClicked(!isClicked)}
                             className={`transform scale-75 cursor-pointer z-50 transition-all ease-linear duration-500 ${
                                 isClicked ? 'transform rotate-90' : ''
@@ -65,7 +83,7 @@ const Header = () => {
                             width={hamburgerWidth}
                             height={hamburgerHeight}
                             alt="Menu"
-                        />
+                        /> */}
                     </div>
                     <NavBar />
                 </div>

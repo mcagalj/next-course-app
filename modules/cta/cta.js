@@ -72,13 +72,18 @@ export default function Cta() {
                             Get in touch with us
                         </p>
                         <div className="flex items-center">
-                            <Image
+                            <img
+                                src={'/right.svg'}
+                                className="w-3 h-3"
+                                alt="Right icon"
+                            />
+                            {/* <Image
                                 src={'/right.svg'}
                                 layout="fixed"
                                 width={15}
                                 height={15}
                                 alt="Right icon"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
