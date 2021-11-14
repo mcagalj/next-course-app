@@ -1,6 +1,9 @@
 import Image from 'next/image';
 
-import CTAImg from '@/assets/grow_business.jpg';
+// import CTAImg from '@/assets/grow_business.jpg';
+// Of course, we shouldn't be hard-coding references to images in
+// this way; but we are experimenting here, aren't we?
+const CTAImg = 'v1636883353/next_course/grow_business.jpg';
 
 const width = 410;
 const height = width / (508 / 440);
