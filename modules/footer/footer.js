@@ -21,23 +21,25 @@ const Footer = () => {
                         />
                         <div className="mt-8">
                             <div className="flex items-center">
-                                <Image
+                                <img src="/phone.svg" width="15" height="15" />
+                                {/* <Image
                                     src={'/phone.svg'}
                                     layout="fixed"
                                     width={15}
                                     height={15}
                                     alt="Phone icon"
-                                />
+                                /> */}
                                 <p className="ml-4">+385 123 0000</p>
                             </div>
                             <div className="flex items-center">
-                                <Image
+                                <img src="/email.svg" width="15" height="15" />
+                                {/* <Image
                                     src={'/email.svg'}
                                     layout="fixed"
                                     width={15}
                                     height={15}
                                     alt="Email icon"
-                                />
+                                /> */}
                                 <p className="ml-4">design@fesb.hr</p>
                             </div>
                         </div>
