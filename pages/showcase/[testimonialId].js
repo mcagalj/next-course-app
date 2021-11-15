@@ -4,13 +4,13 @@ import Header from '@/modules/header/header.js';
 import Footer from '@/modules/footer';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
-const Testimonial = ({ testimonial }) => {
+const Testimonial = ({ header, testimonial }) => {
     const { caption, content, imageSrcCloudinary: imageUrl } = testimonial;
     // const imageUrl = image[0]?.url;
 
     return (
         <>
-            <Header />
+            <Header data={header} />
             <section className="sm:py-12 sm:bg-gray-50">
                 <main className="max-w-4xl flex flex-col mx-auto my-8">
                     <h2 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 px-10 sm:px-0">
@@ -42,6 +42,7 @@ export async function getStaticProps({ params }) {
     // This is suboptimal (calling the same API for the same data twice;
     // we call the same API in getStaticPaths()); we could potentially
     // cache data in production.
+    const header = await DataSourceApi.getHeader();
     const testimonials = await DataSourceApi.getTestimonials();
     const testimonial = testimonials.find((testimonial) => {
         const { caption } = testimonial?.fields;
@@ -50,6 +51,7 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
+            header,
             testimonial: testimonial?.fields,
         },
     };
