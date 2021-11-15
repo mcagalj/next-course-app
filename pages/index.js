@@ -5,10 +5,10 @@ import Footer from '@/modules/footer';
 
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
-const Home = ({ testimonials }) => {
+const Home = ({ header, testimonials }) => {
     return (
         <>
-            <Header />
+            <Header data={header} />
             <Cta />
             <Testimonials testimonials={testimonials} />
             <Footer />
@@ -19,10 +19,12 @@ const Home = ({ testimonials }) => {
 export default Home;
 
 export async function getStaticProps() {
+    const header = await DataSourceApi.getHeader();
     const testimonials = await DataSourceApi.getTestimonials();
 
     return {
         props: {
+            header,
             testimonials,
         },
     };

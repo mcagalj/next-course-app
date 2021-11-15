@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import slugify from 'slugify';
-import { navigationItems } from '../const/navbarList';
 
-const NavBar = ({ classes }) => {
+const NavBar = ({ classes, menuItems }) => {
     return (
         <nav
             className={`${
                 classes ? 'block' : 'hidden'
             } sm:inline-flex list-none font-medium text-hci-lila ${classes}`}
         >
-            {navigationItems.map((item) => (
+            {menuItems.map((item) => (
                 <Link
                     key={item}
                     href={`/${slugify(item, { lower: true })}`}
