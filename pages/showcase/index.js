@@ -4,10 +4,10 @@ import Footer from '@/modules/footer';
 
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
-const ShowcaseIndexPage = ({ testimonials }) => {
+const ShowcaseIndexPage = ({ header, testimonials }) => {
     return (
         <>
-            <Header />
+            <Header data={header} />
             <Testimonials testimonials={testimonials} />
             <Footer />
         </>
@@ -17,10 +17,12 @@ const ShowcaseIndexPage = ({ testimonials }) => {
 export default ShowcaseIndexPage;
 
 export async function getStaticProps() {
+    const header = await DataSourceApi.getHeader();
     const testimonials = await DataSourceApi.getTestimonials();
 
     return {
         props: {
+            header,
             testimonials,
         },
     };
