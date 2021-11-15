@@ -1,6 +1,9 @@
 import Image from 'next/image';
 
-import CTAImg from '@/assets/grow_business.jpg';
+// import CTAImg from '@/assets/grow_business.jpg';
+// Of course, we shouldn't be hard-coding references to images in
+// this way; but we are experimenting here, aren't we?
+const CTAImg = 'v1636883353/next_course/grow_business.jpg';
 
 const width = 410;
 const height = width / (508 / 440);
@@ -69,13 +72,18 @@ export default function Cta() {
                             Get in touch with us
                         </p>
                         <div className="flex items-center">
-                            <Image
+                            <img
+                                src={'/right.svg'}
+                                className="w-3 h-3"
+                                alt="Right icon"
+                            />
+                            {/* <Image
                                 src={'/right.svg'}
                                 layout="fixed"
                                 width={15}
                                 height={15}
                                 alt="Right icon"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>

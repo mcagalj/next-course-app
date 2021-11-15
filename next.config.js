@@ -1,6 +1,9 @@
 module.exports = {
     reactStrictMode: true,
     images: {
-        domains: ['dl.airtable.com'],
+        loader: 'cloudinary',
+        // domains: ['dl.airtable.com'],
+        path: 'https://res.cloudinary.com/mcagalj/image/upload/',
+        domains: ['res.cloudinary.com'],
     },
 };

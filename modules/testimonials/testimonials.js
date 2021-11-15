@@ -18,7 +18,8 @@ const Testimonials = ({ testimonials }) => {
                             key={item.id}
                             caption={item?.fields?.caption}
                             imageSrc={item?.fields?.imageSrc}
-                            imageUrl={item?.fields?.image[0]?.url}
+                            // imageUrl={item?.fields?.image[0]?.url}
+                            imageUrl={item?.fields?.imageSrcCloudinary}
                         />
                     ))}
                 </div>
