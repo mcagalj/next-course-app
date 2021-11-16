@@ -1,18 +1,9 @@
-import Header from '@/modules/header/header.js';
 import Testimonials from '@/modules/testimonials/testimonials.js';
-import Footer from '@/modules/footer';
-
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
-const ShowcaseIndexPage = ({ header, testimonials }) => {
-    return (
-        <>
-            <Header data={header} />
-            <Testimonials testimonials={testimonials} />
-            <Footer />
-        </>
-    );
-};
+const ShowcaseIndexPage = ({ testimonials }) => (
+    <Testimonials testimonials={testimonials} />
+);
 
 export default ShowcaseIndexPage;
 
