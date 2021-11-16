@@ -5,7 +5,6 @@ import Footer from '@/modules/footer';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
 const ShowcaseIndexPage = ({ header, testimonials }) => {
-    console.log(header);
     return (
         <>
             <Header data={header} />
