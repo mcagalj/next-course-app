@@ -1,6 +1,5 @@
 import Cta from '@/modules/cta/cta.js';
 import Testimonials from '@/modules/testimonials/testimonials.js';
-
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
 const Home = ({ testimonials }) => {
