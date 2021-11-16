@@ -38,7 +38,11 @@ const Header = ({ data }) => {
                         alt="Design logo"
                     />
                     <div className="flex items-center sm:hidden">
-                        <BurgerNavigation menuItems={menuItems} isOpen={isClicked} />
+                        <BurgerNavigation
+                            menuItems={menuItems}
+                            isOpen={isClicked}
+                            setIsOpen={setIsClicked}
+                        />
                         <img
                             className="cursor-pointer z-0 h-5"
                             src={'/magnifier.svg'}
