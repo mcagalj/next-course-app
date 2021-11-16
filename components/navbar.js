@@ -1,24 +1,35 @@
 import Link from 'next/link';
 import slugify from 'slugify';
+import { useRouter } from 'next/router';
 
 const NavBar = ({ classes, menuItems }) => {
+    const router = useRouter();
+    const isActive = (pathname) =>
+        router.pathname.split('/')[1] === pathname.split('/')[1];
     return (
         <nav
             className={`${
                 classes ? 'block' : 'hidden'
             } sm:inline-flex list-none font-medium text-hci-lila ${classes}`}
         >
-            {menuItems.map((item) => (
-                <Link
-                    key={item}
-                    href={`/${slugify(item, { lower: true })}`}
-                    passHref
-                >
-                    <li className="px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer">
-                        {item}
-                    </li>
-                </Link>
-            ))}
+            {menuItems.map((item, index) => {
+                const menuItemPath = index
+                    ? `/${slugify(item, { lower: true })}`
+                    : '/';
+                return (
+                    <Link key={item} href={menuItemPath} passHref>
+                        <li
+                            className={`px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila-dark ${
+                                isActive(menuItemPath)
+                                    ? 'bg-hci-lila text-white'
+                                    : ''
+                            } hover:text-white cursor-pointer`}
+                        >
+                            {item}
+                        </li>
+                    </Link>
+                );
+            })}
         </nav>
     );
 };

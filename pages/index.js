@@ -1,17 +1,12 @@
-import Header from '@/modules/header/header.js';
 import Cta from '@/modules/cta/cta.js';
 import Testimonials from '@/modules/testimonials/testimonials.js';
-import Footer from '@/modules/footer';
-
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 
-const Home = ({ header, testimonials }) => {
+const Home = ({ testimonials }) => {
     return (
         <>
-            <Header data={header} />
             <Cta />
             <Testimonials testimonials={testimonials} />
-            <Footer />
         </>
     );
 };
