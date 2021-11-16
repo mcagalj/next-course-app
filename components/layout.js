@@ -7,9 +7,9 @@ import Footer from '@/modules/footer';
 const Layout = ({ children, header, footer }) => {
     return (
         <>
-            <Header data={header} />
+            {header && <Header data={header} />}
             {children}
-            <Footer data={footer} />
+            {header && <Footer data={footer} />}
         </>
     );
 };
