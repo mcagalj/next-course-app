@@ -2,10 +2,12 @@ import { useState } from 'react';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 import { formatPublishedDateForDisplay } from '@/utils/date.js';
 
-const FilterTag = ({ text, toggleActive }) => (
+const FilterTag = ({ text, active, toggleActive }) => (
     <li
         onClick={() => toggleActive(text)}
-        className="bg-gray-200 text-hci-lila px-4 py-1 mb-2 mr-2 rounded-sm hover:bg-pink-500 cursor-pointer hover:text-white whitespace-nowrap"
+        className={`${
+            active ? 'bg-hci-lila-dark text-white' : 'bg-gray-200 text-hci-lila'
+        } px-4 py-1 mb-2 mr-2 rounded-sm hover:bg-pink-500 cursor-pointer hover:text-white whitespace-nowrap`}
     >
         {text}
     </li>
@@ -17,12 +19,14 @@ const Tag = ({ text }) => (
     </li>
 );
 
+const Date = ({ date }) => (
+    <p className="text-gray-400">{formatPublishedDateForDisplay(date)}</p>
+);
+
 const PostListItem = ({ post }) => (
     <li key={post.sys.id}>
         <article className="group my-12 max-w-prose cursor-pointer">
-            <p className="text-gray-400">
-                {formatPublishedDateForDisplay(post.date)}
-            </p>
+            <Date date={post.date} />
             <h2 className="capitalize text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
                 {post.title}
             </h2>
@@ -39,6 +43,7 @@ const PostListItem = ({ post }) => (
 
 const BlogPostList = ({ posts, tags }) => {
     const [activeTags, setActiveTags] = useState([]);
+
     const toggleActive = (text) =>
         setActiveTags((activeTags) => {
             if (activeTags.includes(text)) {
@@ -46,7 +51,6 @@ const BlogPostList = ({ posts, tags }) => {
             }
             return [...activeTags, text];
         });
-    console.log({ activeTags });
 
     return (
         <section className="sm:py-12 sm:bg-gray-50">
@@ -61,6 +65,7 @@ const BlogPostList = ({ posts, tags }) => {
                             <FilterTag
                                 key={tag}
                                 text={tag}
+                                active={activeTags.includes(tag)}
                                 toggleActive={toggleActive}
                             />
                         ))}
