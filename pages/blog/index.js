@@ -40,7 +40,12 @@ const PostListItem = ({ post }) => (
 const BlogPostList = ({ posts, tags }) => {
     const [activeTags, setActiveTags] = useState([]);
     const toggleActive = (text) =>
-        setActiveTags((activeTags) => [...activeTags, text]);
+        setActiveTags((activeTags) => {
+            if (activeTags.includes(text)) {
+                return activeTags.filter((tag) => tag !== text);
+            }
+            return [...activeTags, text];
+        });
     console.log({ activeTags });
 
     return (
