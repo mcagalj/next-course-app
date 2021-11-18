@@ -1,3 +1,23 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "next-course-app"
+    "liveServer.settings.multiRootWorkspaceName": "next-course-app",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#a82626",
+        "activityBar.activeBorder": "#061a06",
+        "activityBar.background": "#a82626",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#061a06",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#a82626",
+        "statusBar.background": "#7f1d1d",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#a82626",
+        "statusBarItem.remoteBackground": "#7f1d1d",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#7f1d1d",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#7f1d1d99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#7F1D1D"
 }
