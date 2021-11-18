@@ -59,7 +59,16 @@ const BlogPostList = ({ posts, tags }) => {
                     Blog Posts
                 </h2>
                 <div className="px-10 mt-8 max-w-prose lg:px-0">
-                    <p className="text-gray-700 mb-2">Filter by tag</p>
+                    <p
+                        onClick={() => setActiveTags([])}
+                        className={`text-gray-700 mb-2 py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
+                            activeTags.length ? 'hover:text-hci-lila-dark' : ''
+                        }`}
+                    >
+                        {activeTags.length
+                            ? 'Reset filters \u2002 \u2715'
+                            : 'Filter by tag'}
+                    </p>
                     <ul className="flex flex-wrap">
                         {tags.map((tag) => (
                             <FilterTag
