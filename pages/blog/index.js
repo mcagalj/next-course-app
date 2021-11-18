@@ -52,6 +52,13 @@ const BlogPostList = ({ posts, tags }) => {
             return [...activeTags, text];
         });
 
+    // This is an example of a bad code (it works but is hard to comprehend - bad design)
+    const filteredPosts = !activeTags.length
+        ? posts
+        : posts.filter(
+              (post) => !!post.tags.filter((tag) => activeTags.includes(tag)).length
+          );
+
     return (
         <section className="sm:py-12 sm:bg-gray-50">
             <main className="max-w-4xl flex flex-col mx-auto my-8">
@@ -81,7 +88,7 @@ const BlogPostList = ({ posts, tags }) => {
                     </ul>
                 </div>
                 <ol className="px-10 lg:px-0">
-                    {posts.map((post) => {
+                    {filteredPosts.map((post) => {
                         return <PostListItem key={post.sys.id} post={post} />;
                     })}
                 </ol>
