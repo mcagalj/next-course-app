@@ -12,7 +12,7 @@ const Footer = () => {
                     Let's change the world
                 </button>
 
-                <div className="flex items-start justify-around">
+                <div className="flex items-start justify-between">
                     <div className="hidden md:block">
                         <Image
                             src={LogoImg}
