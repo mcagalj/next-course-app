@@ -101,7 +101,7 @@ export default BlogPostList;
 
 export async function getStaticProps() {
     const header = await DataSourceApi.getHeader();
-    const posts = await DataSourceApi.getPosts({ preview: true });
+    const posts = await DataSourceApi.getPosts();
 
     // TBD: try to get this from the CMS
     const unionOfTags = posts.reduce((tags, post) => {
