@@ -6,7 +6,7 @@ const LogoImg = 'v1636883352/next_course/logo_t6nqep.png';
 
 const Footer = () => {
     return (
-        <section className="py-12 bg-hci-lila-dark text-hci-lila-light">
+        <section className="px-5 py-12 bg-hci-lila-dark text-hci-lila-light">
             <main className="max-w-4xl flex flex-col mx-auto">
                 <button className="md:hidden capitalize mt-8 mb-20 mx-auto px-10 py-3 border shadow-md whitespace-nowrap text-2xl font-normal font-roboto-condensed font-medium text-hci-lila font-medium bg-hci-lila-light hover:bg-gray-100">
                     Let's change the world
