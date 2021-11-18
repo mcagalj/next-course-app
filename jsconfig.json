@@ -5,6 +5,7 @@
             "@/assets/*": ["assets/*"],
             "@/data/*": ["data/*"],
             "@/lib/*": ["lib/*"],
+            "@/utils/*": ["utils/*"],
             "@/const/*": ["const/*"],
             "@/components/*": ["components/*"],
             "@/modules/*": ["modules/*"]
