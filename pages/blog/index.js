@@ -32,8 +32,8 @@ const PostListItem = ({ post }) => (
             </h2>
             <p className="text-gray-400">{post.author.fullName}</p>
             <p className="my-4 text-gray-700">{post.excerpt}</p>
-            <ul className="flex">
-                {post.tags.map((tag) => (
+            <ul className="flex flex-wrap">
+                {post.tags.sort().map((tag) => (
                     <Tag key={tag} text={tag} />
                 ))}
             </ul>
@@ -77,7 +77,7 @@ const BlogPostList = ({ posts, tags }) => {
                             : 'Filter by tag'}
                     </p>
                     <ul className="flex flex-wrap">
-                        {tags.map((tag) => (
+                        {tags.sort().map((tag) => (
                             <FilterTag
                                 key={tag}
                                 text={tag}
