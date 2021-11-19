@@ -25,6 +25,7 @@ const Date = ({ date }) => (
 );
 
 const PostListItem = ({ post }) => (
+    // eslint-disable-next-line @next/next/link-passhref
     <Link href={`/blog/${post.slug}`}>
         <li key={post.sys.id}>
             <article className="group my-12 max-w-prose cursor-pointer">
