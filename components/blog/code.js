@@ -1,9 +1,8 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialLight as style } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { materialLight as style } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 export const Pre = (props) => <pre className="mt-4" {...props} />;
 
 export const Code = (props) => {
-    console.log(props);
     const match = /language-(\w+)/.exec(props.className || '');
 
     return (

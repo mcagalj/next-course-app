@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 import { formatPublishedDateForDisplay } from '@/utils/date.js';
 
@@ -24,21 +25,23 @@ const Date = ({ date }) => (
 );
 
 const PostListItem = ({ post }) => (
-    <li key={post.sys.id}>
-        <article className="group my-12 max-w-prose cursor-pointer">
-            <Date date={post.date} />
-            <h2 className="capitalize text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
-                {post.title}
-            </h2>
-            <p className="text-gray-400">{post.author.fullName}</p>
-            <p className="my-4 text-gray-700">{post.excerpt}</p>
-            <ul className="flex flex-wrap">
-                {post.tags.sort().map((tag) => (
-                    <Tag key={tag} text={tag} />
-                ))}
-            </ul>
-        </article>
-    </li>
+    <Link href={`/blog/${post.slug}`}>
+        <li key={post.sys.id}>
+            <article className="group my-12 max-w-prose cursor-pointer">
+                <Date date={post.date} />
+                <h2 className="capitalize text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
+                    {post.title}
+                </h2>
+                <p className="text-gray-400">{post.author.fullName}</p>
+                <p className="my-4 text-gray-700">{post.excerpt}</p>
+                <ul className="flex flex-wrap">
+                    {post.tags.sort().map((tag) => (
+                        <Tag key={tag} text={tag} />
+                    ))}
+                </ul>
+            </article>
+        </li>
+    </Link>
 );
 
 const BlogPostList = ({ posts, tags }) => {

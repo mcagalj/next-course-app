@@ -18,7 +18,7 @@ const components = {
 
 const BlogPost = ({ post }) => {
     return (
-        <section className="sm:py-12 sm:bg-gray-50">
+        <section className="sm:py-12">
             <article className="max-w-4xl flex flex-col mx-auto my-8 text-gray-700 px-10 lg:px-0">
                 <h1 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-semibold text-hci-lila">
                     {post.title}
