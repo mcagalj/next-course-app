@@ -2,11 +2,13 @@ import Image from 'next/image';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
-
+import loader from '@/utils/remoteImageLoader.js';
 import { H2 } from '@/components/blog/heading.js';
 import { P } from '@/components/blog/text.js';
 import { Ul, Li } from '@/components/blog/list.js';
 import { Pre, Code } from '@/components/blog/code.js';
+import { Tag } from '@/components/blog/tags.js';
+import { Date } from '@/components/blog/date.js';
 
 const components = {
     h2: H2,
@@ -18,25 +20,27 @@ const components = {
     inlineCode: Code,
 };
 
-const imageLoader = ({ src, width, quality }) => {
-    return `${src}?w=${width}&q=${quality || 65}`;
-};
-
 const BlogPost = ({ post }) => {
     return (
         <section>
-            <article className="max-w-4xl flex flex-col mx-auto my-8 text-gray-700 px-10 lg:px-0">
-                <h1 className="capitalize my-8 text-3xl sm:text-4xl font-roboto-condensed font-semibold text-hci-lila">
+            <article className="flex flex-col mx-auto mb-8 sm:mt-8 sm:mb-12 max-w-prose text-gray-700 px-10 lg:px-0">
+                <h1 className="mt-8 mb-1 text-3xl sm:text-4xl font-roboto-condensed font-semibold text-gray-700">
                     {post.title}
                 </h1>
-                <div className="flex relative h-40 sm:h-80 w-full">
+                <Date date={post.date} />
+                <ul className="flex mt-1 flex-wrap">
+                    {post.tags.sort().map((tag) => (
+                        <Tag key={tag} text={tag} />
+                    ))}
+                </ul>
+                <div className="flex relative mt-4 h-40 sm:h-60 w-full">
                     <Image
-                        loader={imageLoader}
+                        loader={loader}
                         src={post.heroImage.url}
                         layout="fill"
                         objectFit="cover"
-                        objectPosition="0px center"
-                        alt="Grow business"
+                        objectPosition="center center"
+                        alt={post.heroImage.title}
                     />
                 </div>
                 <MDXRemote {...post.mdxSource} components={components} />

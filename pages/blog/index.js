@@ -1,45 +1,39 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import loader from '@/utils/remoteImageLoader.js';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
-import { formatPublishedDateForDisplay } from '@/utils/date.js';
-
-const FilterTag = ({ text, active, toggleActive }) => (
-    <li
-        onClick={() => toggleActive(text)}
-        className={`${
-            active ? 'bg-hci-lila-dark text-white' : 'bg-gray-200 text-hci-lila'
-        } px-4 py-1 mb-2 mr-2 rounded-sm hover:bg-pink-500 cursor-pointer hover:text-white whitespace-nowrap`}
-    >
-        {text}
-    </li>
-);
-
-const Tag = ({ text }) => (
-    <li className="bg-hci-lila text-white px-4 py-1 mb-2 mr-2 rounded-sm group-hover:bg-pink-500 whitespace-nowrap">
-        {text}
-    </li>
-);
-
-const Date = ({ date }) => (
-    <p className="text-gray-400">{formatPublishedDateForDisplay(date)}</p>
-);
+import { Tag, FilterTag } from '@/components/blog/tags.js';
+import { Date } from '@/components/blog/date.js';
 
 const PostListItem = ({ post }) => (
     // eslint-disable-next-line @next/next/link-passhref
     <Link href={`/blog/${post.slug}`}>
         <li key={post.sys.id}>
-            <article className="group my-12 max-w-prose cursor-pointer">
-                <Date date={post.date} />
-                <h2 className="capitalize text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
-                    {post.title}
-                </h2>
-                <p className="text-gray-400">{post.author.fullName}</p>
-                <p className="my-4 text-gray-700">{post.excerpt}</p>
-                <ul className="flex flex-wrap">
-                    {post.tags.sort().map((tag) => (
-                        <Tag key={tag} text={tag} />
-                    ))}
-                </ul>
+            <article className="group my-14 cursor-pointer sm:flex items-end">
+                <div className="flex relative sm:border sm:border-gray-200 my-2 h-32 sm:w-1/3 sm:h-60">
+                    <Image
+                        loader={loader}
+                        src={post.heroImage.url}
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="center end"
+                        alt={post.heroImage.title}
+                    />
+                </div>
+                <div className="sm:ml-4 sm:w-2/3 sm:max-w-prose">
+                    <Date date={post.date} />
+                    <h2 className="text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
+                        {post.title}
+                    </h2>
+                    <p className="text-gray-400">{post.author.fullName}</p>
+                    <p className="my-4 text-gray-700">{post.excerpt}</p>
+                    <ul className="flex flex-wrap">
+                        {post.tags.sort().map((tag) => (
+                            <Tag key={tag} text={tag} />
+                        ))}
+                    </ul>
+                </div>
             </article>
         </li>
     </Link>
@@ -64,12 +58,12 @@ const BlogPostList = ({ posts, tags }) => {
           );
 
     return (
-        <section className="sm:py-12 sm:bg-gray-50">
+        <section>
             <main className="max-w-4xl flex flex-col mx-auto my-8">
-                <h2 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 px-10 lg:px-0">
+                <h2 className="capitalize sm:my-8 text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 px-10 lg:px-0">
                     Blog Posts
                 </h2>
-                <div className="px-10 mt-8 max-w-prose lg:px-0">
+                <div className="px-10 sm:mt-0  lg:px-0">
                     <p
                         onClick={() => setActiveTags([])}
                         className={`text-gray-700 mb-2 py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
