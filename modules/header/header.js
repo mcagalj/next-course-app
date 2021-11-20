@@ -19,14 +19,15 @@ const Header = ({ data }) => {
 
     return (
         <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80">
-            <Image
-                className="hidden sm:block z--1"
-                src={heroSrc}
-                layout="fill"
-                objectFit="cover"
-                // placeholder="blur"
-                alt="Hero image"
-            />
+            <div className="hidden sm:block z--1">
+                <Image
+                    src={heroSrc}
+                    layout="fill"
+                    objectFit="cover"
+                    // placeholder="blur"
+                    alt="Hero image"
+                />
+            </div>
 
             <main className="max-w-4xl mx-auto flex-grow flex flex-col">
                 <div className="z-10 flex justify-between items-center sm:mb-16">
