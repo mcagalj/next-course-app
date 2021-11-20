@@ -14,6 +14,7 @@ const components = {
     li: Li,
     pre: Pre,
     code: Code,
+    inlineCode: Code,
 };
 
 const BlogPost = ({ post }) => {

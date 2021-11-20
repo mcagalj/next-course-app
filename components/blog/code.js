@@ -4,8 +4,7 @@ export const Pre = (props) => <pre className="mt-4" {...props} />;
 
 export const Code = (props) => {
     const match = /language-(\w+)/.exec(props.className || '');
-
-    return (
+    return match ? (
         <SyntaxHighlighter
             style={style}
             language={match[1]}
@@ -15,5 +14,9 @@ export const Code = (props) => {
         >
             {String(props.children).replace(/\n$/, '')}
         </SyntaxHighlighter>
+    ) : (
+        <code className="py-0 px-2 bg-hci-lila-light rounded-sm text-hci-lila-dark my-1 inline-block">
+            {props.children}
+        </code>
     );
 };
