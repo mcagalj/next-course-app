@@ -18,7 +18,7 @@ const Header = ({ data }) => {
     }, [isClicked]);
 
     return (
-        <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80 z-0">
+        <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80">
             <div className="hidden sm:block z--1">
                 <Image
                     src={heroSrc}

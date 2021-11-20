@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
@@ -17,13 +18,27 @@ const components = {
     inlineCode: Code,
 };
 
+const imageLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 65}`;
+};
+
 const BlogPost = ({ post }) => {
     return (
-        <section className="sm:py-12">
+        <section>
             <article className="max-w-4xl flex flex-col mx-auto my-8 text-gray-700 px-10 lg:px-0">
-                <h1 className="capitalize text-3xl sm:text-4xl font-roboto-condensed font-semibold text-hci-lila">
+                <h1 className="capitalize my-8 text-3xl sm:text-4xl font-roboto-condensed font-semibold text-hci-lila">
                     {post.title}
                 </h1>
+                <div className="flex relative h-40 sm:h-80 w-full">
+                    <Image
+                        loader={imageLoader}
+                        src={post.heroImage.url}
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="0px center"
+                        alt="Grow business"
+                    />
+                </div>
                 <MDXRemote {...post.mdxSource} components={components} />
             </article>
         </section>
