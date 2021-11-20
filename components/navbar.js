@@ -10,7 +10,7 @@ const NavBar = ({ classes, menuItems }) => {
         <nav
             className={`${
                 classes ? 'block' : 'hidden'
-            } sm:inline-flex list-none font-medium text-hci-lila ${classes}`}
+            } sm:inline-flex font-medium text-hci-lila ${classes}`}
         >
             {menuItems.map((item, index) => {
                 const menuItemPath = index
@@ -18,7 +18,7 @@ const NavBar = ({ classes, menuItems }) => {
                     : '/';
                 return (
                     <Link key={item} href={menuItemPath} passHref>
-                        <li
+                        <a
                             className={`px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila-dark ${
                                 isActive(menuItemPath)
                                     ? 'bg-hci-lila text-white'
@@ -26,7 +26,7 @@ const NavBar = ({ classes, menuItems }) => {
                             } hover:text-white cursor-pointer`}
                         >
                             {item}
-                        </li>
+                        </a>
                     </Link>
                 );
             })}
