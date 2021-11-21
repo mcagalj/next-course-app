@@ -1,1 +1,1 @@
-export const P = (props) => <p className="mt-4 leading-6 sm:text-lg" {...props} />;
+export const P = (props) => <p className="mt-4 leading-7" {...props} />;

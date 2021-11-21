@@ -7,6 +7,7 @@ import { H2 } from '@/components/blog/heading.js';
 import { P } from '@/components/blog/text.js';
 import { Ul, Li } from '@/components/blog/list.js';
 import { Pre, Code } from '@/components/blog/code.js';
+import { Quote } from '@/components/blog/quote.js';
 import { Tag } from '@/components/blog/tags.js';
 import { Date } from '@/components/blog/date.js';
 
@@ -18,6 +19,7 @@ const components = {
     pre: Pre,
     code: Code,
     inlineCode: Code,
+    blockquote: Quote,
 };
 
 const BlogPost = ({ post }) => {

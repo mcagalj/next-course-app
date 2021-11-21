@@ -23,3 +23,8 @@ a {
 .z--1 {
     z-index: -1;
 }
+
+/* Yeah, this is a hack */
+blockquote > p {
+    margin: 0 !important;
+}
