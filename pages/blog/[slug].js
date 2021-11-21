@@ -33,12 +33,12 @@ const BlogPost = ({ post }) => {
                         <Tag key={tag} text={tag} />
                     ))}
                 </ul>
-                <div className="flex relative mt-4 h-40 sm:h-60 w-full">
+                <div className="flex relative mt-4 h-40 sm:h-80 w-full">
                     <Image
                         loader={loader}
                         src={post.heroImage.url}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         objectPosition="center center"
                         alt={post.heroImage.title}
                     />

@@ -1,5 +1,5 @@
 const Tag = ({ text }) => (
-    <li className="bg-hci-lila text-white text-sm px-2 py-0 mb-2 mr-2 rounded-sm group-hover:bg-pink-500 whitespace-nowrap">
+    <li className="bg-hci-lila text-white text-sm px-2 py-0 mt-2 mr-2 rounded-sm group-hover:bg-pink-500 whitespace-nowrap">
         {text}
     </li>
 );
