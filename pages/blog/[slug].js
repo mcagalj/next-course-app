@@ -25,7 +25,7 @@ const components = {
 const BlogPost = ({ post }) => {
     return (
         <section>
-            <article className="flex flex-col mx-auto mb-8 sm:mt-8 sm:mb-12 max-w-prose text-gray-700 px-10 lg:px-0">
+            <article className="flex flex-col mx-auto mb-8 sm:mt-8 sm:mb-12 max-w-prose text-gray-700 px-5 lg:px-0">
                 <h1 className="mt-8 mb-1 text-3xl sm:text-4xl font-roboto-condensed font-semibold text-gray-700">
                     {post.title}
                 </h1>
