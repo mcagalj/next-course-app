@@ -10,34 +10,34 @@ const PostListItem = ({ post }) => (
     // eslint-disable-next-line @next/next/link-passhref
     <Link href={`/blog/${post.slug}`}>
         <li key={post.sys.id}>
-            <article className="group mt-8 mb-14 border rounded-sm border-hci-lila-light sm:hover:border-pink-500 p-2 lg:mb-16 cursor-pointer sm:flex items-end">
-                <div className="flex mb-2 relative h-40 w-full sm:hidden">
+            <article className="group mt-8 mb-14 lg:mb-16 cursor-pointer sm:flex items-end">
+                <div className="flex mb-2 relative h-60 w-full sm:hidden">
                     <Image
                         loader={loader}
                         src={post.heroImage.url}
                         layout="fill"
-                        objectFit="contain"
-                        objectPosition="0px center"
+                        objectFit="cover"
+                        objectPosition="center center"
                         alt={post.heroImage.title}
                     />
                 </div>
-                <div className="hidden sm:block relative h-32 sm:w-2/6 sm:h-60">
+                <div className="hidden sm:block relative h-32 sm:w-2/5 sm:h-60">
                     <Image
                         loader={loader}
                         src={post.heroImage.url}
                         layout="fill"
-                        objectFit="contain"
-                        objectPosition="right 0px"
+                        objectFit="cover"
+                        objectPosition="center center"
                         alt={post.heroImage.title}
                     />
                 </div>
-                <div className="flex flex-col justify-between sm:ml-4 lg:ml-8 sm:h-60 sm:w-4/6 sm:max-w-prose">
+                <div className="flex flex-col justify-between sm:ml-4 lg:ml-8 sm:h-60 sm:w-3/5 sm:max-w-prose">
                     <Date date={post.date} />
                     <h2 className="text-2xl font-roboto-condensed font-bold text-hci-lila leading-loose group-hover:text-pink-500">
                         {post.title}
                     </h2>
                     <p className="text-gray-400">{post.author.fullName}</p>
-                    <p className="mt-4 mb-2 text-gray-700">{post.excerpt}</p>
+                    <p className="mt-4 text-gray-700">{post.excerpt}</p>
                     <ul className="flex flex-wrap">
                         {post.tags.sort().map((tag) => (
                             <Tag key={tag} text={tag} className="mb-0" />
