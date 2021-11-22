@@ -45,7 +45,7 @@ const BlogPost = ({ post }) => {
                         alt={post.heroImage.title}
                     />
                 </div>
-                <MDXRemote {...post.mdxSource} components={components} />
+                <MDXRemote {...post.mdxSource} components={components} lazy />
             </article>
         </section>
     );
