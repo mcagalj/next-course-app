@@ -1,8 +1,13 @@
 import Testimonials from '@/modules/testimonials/testimonials.js';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
+import { NextSeo } from 'next-seo';
+import SEO from '@/data/next-seo.config.js';
 
 const ShowcaseIndexPage = ({ testimonials }) => (
-    <Testimonials testimonials={testimonials} />
+    <>
+        <NextSeo title={`${SEO.title} - Showcase`} />
+        <Testimonials testimonials={testimonials} />
+    </>
 );
 
 export default ShowcaseIndexPage;

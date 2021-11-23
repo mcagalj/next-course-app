@@ -5,6 +5,8 @@ import loader from '@/utils/remoteImageLoader.js';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 import { Tag, FilterTag } from '@/components/blog/tags.js';
 import { Date } from '@/components/blog/date.js';
+import { NextSeo } from 'next-seo';
+import SEO from '@/data/next-seo.config.js';
 
 const PostListItem = ({ post }) => (
     // eslint-disable-next-line @next/next/link-passhref
@@ -68,40 +70,43 @@ const BlogPostList = ({ posts, tags }) => {
           );
 
     return (
-        <section>
-            <main className="max-w-4xl px-5 flex flex-col mx-auto my-8">
-                <h2 className="capitalize sm:my-8 text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 lg:px-0">
-                    Blog Posts
-                </h2>
-                <div className="sm:mt-0 lg:px-0">
-                    <p
-                        onClick={() => setActiveTags([])}
-                        className={`text-gray-700 mb-1 pt-4 pb-2 sm:mb-2 sm:py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
-                            activeTags.length ? 'hover:text-hci-lila-dark' : ''
-                        }`}
-                    >
-                        {activeTags.length
-                            ? 'Reset filters \u2002 \u2715'
-                            : 'Filter by tag'}
-                    </p>
-                    <ul className="flex overflow-x-auto sm:flex-wrap sm:overflow-x-hidden">
-                        {tags.sort().map((tag) => (
-                            <FilterTag
-                                key={tag}
-                                text={tag}
-                                active={activeTags.includes(tag)}
-                                toggleActive={toggleActive}
-                            />
-                        ))}
-                    </ul>
-                </div>
-                <ol className="lg:px-0">
-                    {filteredPosts.map((post) => {
-                        return <PostListItem key={post.sys.id} post={post} />;
-                    })}
-                </ol>
-            </main>
-        </section>
+        <>
+            <NextSeo title={`${SEO.title} - Blog`} />
+            <section>
+                <main className="max-w-4xl px-5 flex flex-col mx-auto my-8">
+                    <h2 className="capitalize sm:my-8 text-3xl sm:text-4xl font-roboto-condensed font-bold text-gray-700 lg:px-0">
+                        Blog Posts
+                    </h2>
+                    <div className="sm:mt-0 lg:px-0">
+                        <p
+                            onClick={() => setActiveTags([])}
+                            className={`text-gray-700 mb-1 pt-4 pb-2 sm:mb-2 sm:py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
+                                activeTags.length ? 'hover:text-hci-lila-dark' : ''
+                            }`}
+                        >
+                            {activeTags.length
+                                ? 'Reset filters \u2002 \u2715'
+                                : 'Filter by tag'}
+                        </p>
+                        <ul className="flex overflow-x-auto sm:flex-wrap sm:overflow-x-hidden">
+                            {tags.sort().map((tag) => (
+                                <FilterTag
+                                    key={tag}
+                                    text={tag}
+                                    active={activeTags.includes(tag)}
+                                    toggleActive={toggleActive}
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                    <ol className="lg:px-0">
+                        {filteredPosts.map((post) => {
+                            return <PostListItem key={post.sys.id} post={post} />;
+                        })}
+                    </ol>
+                </main>
+            </section>
+        </>
     );
 };
 
