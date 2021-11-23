@@ -4,12 +4,12 @@ import loader from '@/utils/remoteImageLoader.js';
 
 export const ResponsiveImage = (props) => {
     return (
-        <div className="flex flex-col items-center my-4 sm:my-8">
+        <div className="flex flex-col items-center my-4">
             <div className="relative mx-auto w-full sm:w-4/5 h-60 sm:h-80">
                 <Image
                     loader={loader}
                     layout="fill"
-                    objectFit={'cover'}
+                    objectFit={'contain'}
                     objectPosition={'center center'}
                     {...props}
                 />
