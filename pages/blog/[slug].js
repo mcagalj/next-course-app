@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { serialize } from 'next-mdx-remote/serialize';
+import remarkUnwrapImages from 'remark-unwrap-images';
 import { MDXRemote } from 'next-mdx-remote';
 import DataSourceApi from '@/lib/DataSourceAPI.js';
 import loader from '@/utils/remoteImageLoader.js';
@@ -10,6 +11,7 @@ import { Pre, Code } from '@/components/blog/code.js';
 import { Quote } from '@/components/blog/quote.js';
 import { Tag } from '@/components/blog/tags.js';
 import { Date } from '@/components/blog/date.js';
+import { ResponsiveImage } from '@/components/blog/image.js';
 
 const components = {
     h2: H2,
@@ -20,6 +22,7 @@ const components = {
     code: Code,
     inlineCode: Code,
     blockquote: Quote,
+    img: ResponsiveImage,
 };
 
 const BlogPost = ({ post }) => {
@@ -57,7 +60,9 @@ export async function getStaticProps({ params }) {
     const header = await DataSourceApi.getHeader();
     const post = await DataSourceApi.getPost({ slug: params.slug });
 
-    post.mdxSource = await serialize(post.content);
+    post.mdxSource = await serialize(post.content, {
+        mdxOptions: { remarkPlugins: [remarkUnwrapImages] },
+    });
     delete post.content;
 
     return {

@@ -15,7 +15,7 @@ export const Code = (props) => {
             {String(props.children).replace(/\n$/, '')}
         </SyntaxHighlighter>
     ) : (
-        <code className="py-0 px-2 bg-hci-lila-light rounded-sm text-sm text-hci-lila-dark my-1 inline-block">
+        <code className="py-0 px-1 bg-hci-lila-light rounded-sm text-sm text-hci-lila-dark my-1 inline-block">
             {props.children}
         </code>
     );
