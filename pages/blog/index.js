@@ -76,7 +76,7 @@ const BlogPostList = ({ posts, tags }) => {
                 <div className="sm:mt-0 lg:px-0">
                     <p
                         onClick={() => setActiveTags([])}
-                        className={`text-gray-700 mb-2 py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
+                        className={`text-gray-700 mb-1 pt-4 pb-2 sm:mb-2 sm:py-4 uppercase text-xl font-roboto-condensed cursor-pointer ${
                             activeTags.length ? 'hover:text-hci-lila-dark' : ''
                         }`}
                     >
@@ -84,7 +84,7 @@ const BlogPostList = ({ posts, tags }) => {
                             ? 'Reset filters \u2002 \u2715'
                             : 'Filter by tag'}
                     </p>
-                    <ul className="flex flex-wrap">
+                    <ul className="flex overflow-x-auto sm:flex-wrap sm:overflow-x-hidden">
                         {tags.sort().map((tag) => (
                             <FilterTag
                                 key={tag}
